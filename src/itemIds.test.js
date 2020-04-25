@@ -1,4 +1,9 @@
 import { ItemIds } from './itemIds';
+// MOCKS
+import * as connectors from './utils/connectors';
+
+
+const MockedStore = {};
 
 
 describe("ItemIds", () => {
@@ -25,6 +30,28 @@ describe("ItemIds", () => {
 		expect(() => ItemIds({})).toThrow();
 	});
 
+	describe("identity", () => {
+
+		test("calls the _with connector with \"name\" and \"ItemIds\" as key, value pair", () => {
+			// mocks
+			MockedStore["connectors"] = {};
+			MockedStore["connectors"]["_with"] = connectors._with;
+			connectors._with = jest.fn();
+
+			ItemIds();
+			expect(connectors._with).toBeCalledWith([], "name", "ItemIds");
+
+			// un-mock
+			connectors._with = MockedStore.connectors._with
+		});
+
+		test("has the name prop with the value: \"ItemIds\"", () => {
+			const itemIds = ItemIds();
+
+			expect(itemIds.name).toBe("ItemIds");
+		});
+
+	});
 
 	
 });
