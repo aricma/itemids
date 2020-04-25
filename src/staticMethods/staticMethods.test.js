@@ -1,5 +1,6 @@
 import { isItemIds, isItemId, isItemIdList, unify } from './staticMethods';
 import { ItemIds } from '../itemIds';
+import * as ERRORS from '../errors';
 
 
 describe("Static Methods", () => {
@@ -62,7 +63,7 @@ describe("Static Methods", () => {
     describe("unify", () => {
 
         test("throws if no ItemIdList was given", () => {
-            expect(() => unify({})).toThrow();
+            expect(() => unify({})).toThrow(ERRORS.staticMethods.unify.gotNoItemIdList);
         });
 
         test("returns an empty array per default", () => {
