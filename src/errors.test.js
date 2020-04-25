@@ -31,4 +31,16 @@ describe("ERRORS", () => {
 
     });
 
+    describe("staticMethods", () => {
+
+        describe("unify", () => {
+
+            test("gotNoItemIdList", () => {
+                expect(typeof ERRORS.staticMethods.unify.gotNoItemIdList).toBe("string");
+            });
+
+        });
+
+    });
+
 });
