@@ -32,7 +32,7 @@ describe("Function Factories Array", () => {
         });
 
         test("throws if given value is a function", () => {
-            expect(() => _with([], "add", function() {})).toThrow(ERRORS.functionFactories._with.gotFunction);
+            expect(() => _with([], "add", function() {})).toThrow(ERRORS.utils._with.gotFunction);
         });
 
     });
@@ -61,7 +61,7 @@ describe("Function Factories Array", () => {
         });
 
         test("throws if given function is No function", () => {
-            expect(() => _can([], "key", "value")).toThrow(ERRORS.functionFactories._can.gotNoFunction);
+            expect(() => _can([], "key", "value")).toThrow(ERRORS.utils._can.gotNoFunction);
         });
 
     });
