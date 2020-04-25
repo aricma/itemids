@@ -56,5 +56,24 @@ describe("ItemIds", () => {
 
 	});
 
+	describe("static methods", () => {
+
+		test("isItemIds", () => {
+			expect(typeof ItemIds.isItemIds).toBe("function")
+		});
+
+		test("isItemId", () => {
+			expect(typeof ItemIds.isItemId).toBe("function")
+		});
+
+		test("isItemIdList", () => {
+			expect(typeof ItemIds.isItemIdList).toBe("function")
+		});
+
+		test("unify", () => {
+			expect(typeof ItemIds.unify).toBe("function")
+		});
+
+	});
 	
 });
