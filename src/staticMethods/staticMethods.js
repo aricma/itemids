@@ -1,6 +1,8 @@
 /**
  * the itemIds static methods
  */
+import * as ERRORS from '../errors';
+
 
 /**
  * @param {*} [object]
@@ -43,8 +45,8 @@ export function isItemIdList(value) {
  * @return {Array} - the given object
  */
 export function unify(object = []) {
-    const isNoItemIdList = !isItemIdList(object);
-	if (isNoItemIdList) throw Error('ItemIds.unify accepts only objects of type ItemIdList');
+    const gotNoItemIdList = !isItemIdList(object);
+	if (gotNoItemIdList) throw Error(ERRORS.staticMethods.unify.gotNoItemIdList);
 
     const values = object.splice(0);
 
