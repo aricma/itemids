@@ -16,3 +16,10 @@ export const staticMethods = {
 		gotNoItemIdList: "unify expects one argument of type ItemIdList"
 	}
 };
+
+export const methods = {
+	set: {
+		isNotBoundToAnArray: "set needs to be bound to an Array",
+		gotNeitherItemIdListNorFunction: "set expects one argument of either type ItemIdList or function",
+	}
+};

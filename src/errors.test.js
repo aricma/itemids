@@ -43,4 +43,20 @@ describe("ERRORS", () => {
 
     });
 
+    describe("methods", () => {
+
+        describe("set", () => {
+
+            test("isNotBoundToAnArray", () => {
+                expect(typeof ERRORS.methods.set.isNotBoundToAnArray).toBe("string");
+            });
+
+            test("gotNeitherItemIdListNorFunction", () => {
+                expect(typeof ERRORS.methods.set.gotNeitherItemIdListNorFunction).toBe("string");
+            });
+
+        });
+
+    });
+
 });
