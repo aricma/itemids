@@ -11,12 +11,12 @@ describe("ERRORS", () => {
 
     });
 
-    describe("functionFactories", () => {
+    describe("utils", () => {
 
         describe("_with", () => {
 
             test("gotFunction", () => {
-                expect(typeof ERRORS.functionFactories._with.gotFunction).toBe("string");
+                expect(typeof ERRORS.utils._with.gotFunction).toBe("string");
             });
 
         });
@@ -24,7 +24,7 @@ describe("ERRORS", () => {
         describe("_can", () => {
 
             test("gotNoFunction", () => {
-                expect(typeof ERRORS.functionFactories._can.gotNoFunction).toBe("string");
+                expect(typeof ERRORS.utils._can.gotNoFunction).toBe("string");
             });
 
         });
