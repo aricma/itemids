@@ -2,8 +2,10 @@
   "name": "@aricma/itemids",
   "version": "1.0.0",
   "description": "An object to simplify state creation and state updates.",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "scripts": {
+    "start": "npx babel src --watch --out-dir build",
+    "build": "npx babel src --out-dir build",
     "test": "jest --watch",
     "coverage": "jest --collect-coverage",
     "ci-test": "jest --ci"
@@ -15,6 +17,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "babel-jest": "^25.4.0",
