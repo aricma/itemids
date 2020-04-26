@@ -1,8 +1,9 @@
 /**
  * the ItemIds object
  */
-import { _with } from './utils';
 import * as staticMethods from './staticMethods';
+import * as methods from './methods';
+import { _with, _can } from './utils';
 import * as ERRORS from './errors';
 
 
@@ -25,8 +26,15 @@ export function ItemIds(ids = []) {
 	return Object.assign(
 		ids,
 		// properties
-		_with(ids, "name", "ItemIds")
+		_with(ids, "name", "ItemIds"),
 		// methods
+		_can(ids, "set", methods.set),
+		_can(ids, "add", methods.add),
+		_can(ids, "remove", methods.remove),
+		_can(ids, "toggle", methods.toggle),
+		_can(ids, "toggleAll", methods.toggleAll),
+		_can(ids, "has", methods.has),
+		_can(ids, "isEqualTo", methods.isEqualTo)
 	);
 }
 
