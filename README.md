@@ -28,6 +28,8 @@ ItemIds can be use anywhere where their is selection:
 - Tiles
 - d3 charts
 
+**It can be used perfectly together with the package [immer](https://github.com/immerjs/immer).**
+
 
 example for react state:
 ```JSX
