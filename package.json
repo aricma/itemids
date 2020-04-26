@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --watch",
     "ci-test": "jest --ci",
+    "cov": "jest --collect-coverage"
   },
   "author": {
     "name": "Adrian Mindak",
