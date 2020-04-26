@@ -1,7 +1,7 @@
 {
   "name": "@aricma/itemids",
   "version": "1.0.0",
-  "description": "An object to simplify state creation and state updates.",
+  "description": "Be faster in creating and updating react state, with the ItemIds object.",
   "main": "build/index.js",
   "scripts": {
     "start": "npx babel src --watch --out-dir build",
@@ -10,20 +10,32 @@
     "coverage": "jest --collect-coverage",
     "ci-test": "jest --ci"
   },
-  "author": {
-    "name": "Adrian Mindak",
-    "email": "adrian@aricma.com",
-    "url": "aricma.com"
-  },
-  "bugs": {
-    "url": "https://github.com/aricma/itemids/issues"
-  },
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "babel-jest": "^25.4.0",
     "jest": "^25.4.0"
-  }
+  },
+  "author": {
+    "name": "Adrian Mindak",
+    "email": "adrian@aricma.com",
+    "url": "aricma.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aricma/itemids.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aricma/itemids/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "state",
+    "effects",
+    "mutable",
+    "selection",
+    "array"
+  ]
 }
