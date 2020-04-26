@@ -37,6 +37,7 @@ function Gallery({ images }) {
                             onClick={ toggle(id) }
                         />
                     )
+                })
             }
         </div>
     )
