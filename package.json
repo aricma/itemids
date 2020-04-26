@@ -7,7 +7,7 @@
     "test": "jest --watch",
     "coverage": "jest --collect-coverage",
     "ci-test": "jest --ci",
-    "ci-coverage": "(jest --ci --collect-coverage) <(curl -s https://codecov.io/bash)"
+    "ci-coverage": "jest --ci --collect-coverage <(curl -s https://codecov.io/bash)"
   },
   "author": {
     "name": "Adrian Mindak",
