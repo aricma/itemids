@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: jest-coverage-report
+      - run: npm run coverage
     - name: Codecov
       uses: codecov/codecov-action@v1.0.6
