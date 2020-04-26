@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest --watch",
+    "coverage": "jest --collect-coverage",
     "ci-test": "jest --ci",
-    "cov": "jest --collect-coverage"
+    "ci-coverage": "(jest --ci --collect-coverage) <(curl -s https://codecov.io/bash)"
   },
   "author": {
     "name": "Adrian Mindak",
