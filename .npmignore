@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+.github
+.gitignore
+coverage
+node_modules
+src
