@@ -7,17 +7,14 @@
 
 ## Usage
 
-### install
-
 with npm:
 ``npm install @aricma/itemids``
 
 with yarn:
 ``yarn add @aricma/itemids``
 
-### examples
 
-in react state:
+example for react state:
 ```JSX
 function Gallery({ images }) {
     // STATE HANDLER HOOK
@@ -58,7 +55,7 @@ function useGalleryState() {
 }
 ```
 
-in react effects:
+example for react effects:
 ```JSX
 function useGalleryState(initialSelection) {
     // STATE
