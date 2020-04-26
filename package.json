@@ -6,9 +6,7 @@
   "scripts": {
     "test": "jest --watch",
     "coverage": "jest --collect-coverage",
-    "ci-test": "jest --ci",
-    "ci-coverage": "jest --ci --collect-coverage && npm run codecov",
-    "codecov": "bash < curl -s https://codecov.io/bash"
+    "ci-test": "jest --ci"
   },
   "author": {
     "name": "Adrian Mindak",
