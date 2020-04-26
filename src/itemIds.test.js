@@ -75,5 +75,37 @@ describe("ItemIds", () => {
 		});
 
 	});
+
+	describe("methods", () => {
+
+		test("set", () => {
+			expect(typeof ItemIds().set).toBe("function")
+		});
+
+		test("add", () => {
+			expect(typeof ItemIds().add).toBe("function")
+		});
+
+		test("remove", () => {
+			expect(typeof ItemIds().remove).toBe("function")
+		});
+
+		test("toggle", () => {
+			expect(typeof ItemIds().toggle).toBe("function")
+		});
+
+		test("toggleAll", () => {
+			expect(typeof ItemIds().toggleAll).toBe("function")
+		});
+
+		test("has", () => {
+			expect(typeof ItemIds().has).toBe("function")
+		});
+
+		test("isEqualTo", () => {
+			expect(typeof ItemIds().isEqualTo).toBe("function")
+		});
+
+	});
 	
 });
