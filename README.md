@@ -32,7 +32,7 @@ ItemIds can be use anywhere where their is selection:
 
 
 example for react state:
-```JSX
+```Js
 function Gallery({ images }) {
     // STATE HANDLER HOOK
     const { selection, toggle } = useGalleryState();
@@ -73,7 +73,7 @@ function useGalleryState() {
 ```
 
 example for react effects:
-```JSX
+```Js
 function useGalleryState(initialSelection) {
     // STATE
     const [selection, setSelection] = useState(ItemIds(initialSelection));
