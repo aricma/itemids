@@ -94,9 +94,7 @@ function useGalleryState(initialSelection) {
 ## API
 
 ItemIds is a function returning an array object. ItemIds has some "util" methods on it. The methods on the returned 
-object however are extensions to the Js Array object. 
-All methods on the returned object are returning "this" so they can be piped.
-
+object however are extensions to the Js Array object.
 
 *Checkout the .test files to see in detail how the methods on ItemIds can be used.*
 
@@ -127,6 +125,7 @@ ItemIds.unify([1,2,2,3]); // [1,2,3]
 
 // methods
 // these methods are helpful setting and updating the "state"
+// all methods on the ItemIds object are returning "this" so they can be piped
 ItemIds() // []
 
 // set
