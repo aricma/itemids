@@ -1,17 +1,32 @@
-# ItemIds
+# ItemIds (*object*)
 
 ![tests](https://github.com/aricma/itemids/workflows/tests/badge.svg)
 [![codecov](https://codecov.io/gh/aricma/itemids/branch/master/graph/badge.svg)](https://codecov.io/gh/aricma/itemids)
 
 *Be faster in creating and updating react state, with ItemIds.*
 
+During the last year(2019-2020) I had to write a bunch of different components which had all slightly different logic 
+with the same kind of state. I extracted the shared logic and put it in a object.
+
 ## Usage
 
 with npm:
-``npm install @aricma/itemids``
+```npm install @aricma/itemids```
 
 with yarn:
-``yarn add @aricma/itemids``
+```yarn add @aricma/itemids```
+
+
+ItemIds can be use anywhere where their is selection:
+- ImageGalleries
+- [DropDown](https://ant.design/components/select/)
+- [Steps](https://ant.design/components/steps/)
+- [Checkbox](https://ant.design/components/checkbox/)
+- [Radio](https://ant.design/components/radio/)
+- [Tags](https://ant.design/components/tag/)
+- [Collapse](https://ant.design/components/collapse/)
+- Tiles
+- d3 charts
 
 
 example for react state:
