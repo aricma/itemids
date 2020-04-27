@@ -169,3 +169,12 @@ ItemIds() // []
 .isEqualTo([1,2,3]) // true
 .isEqualTo([1,2,3,4]) // false
 ```
+
+## Feedback && Support
+
+If this package is in any way helpful to you, I would love to hear about your use cases. 
+You can contact me via the contact form on my [website](http://www.aricma.com/). I am eager to hear your stories.
+
+If you have experienced any bugs or just want to request a feature, please do so via [the issue board on github](https://github.com/aricma/itemids/issues).
+*I can and will **not** implement every function some dude is demanding! But if your feature is a good one or a recurring request, why not ;).*
+
