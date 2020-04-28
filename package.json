@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx babel src --watch --out-dir build",
     "build": "npx babel src --out-dir build",
-    "test": "jest --watch",
+    "test": "jest src --watch",
     "coverage": "jest --collect-coverage",
     "ci-test": "jest --ci"
   },
