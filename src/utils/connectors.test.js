@@ -35,6 +35,17 @@ describe("Function Factories Array", () => {
             expect(() => _with([], "add", function() {})).toThrow(ERRORS.utils._with.gotFunction);
         });
 
+        test("the property attached to the given object is not enumerable and read only", () => {
+            const object = [];
+
+            _with(object, "key", "value");
+
+            expect(object).toEqual([]);
+            expect(object.key).toBe("value");
+
+            expect(() => { object["key"] = "FooBar" }).toThrow();
+        });
+
     });
 
     describe("_can", () => {
@@ -62,6 +73,18 @@ describe("Function Factories Array", () => {
 
         test("throws if given function is No function", () => {
             expect(() => _can([], "key", "value")).toThrow(ERRORS.utils._can.gotNoFunction);
+        });
+
+        test("the function attached to the given object is not enumerable and read only", () => {
+            const object = [];
+            function func(a,b) { return a + b }
+
+            _can(object, "add", func);
+
+            expect(object).toEqual([]);
+            expect(object.add(1,2)).toBe(3);
+
+            expect(() => { object["add"] = "FooBar" }).toThrow();
         });
 
     });
