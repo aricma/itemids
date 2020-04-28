@@ -170,6 +170,28 @@ ItemIds() // []
 .isEqualTo([1,2,3,4]) // false
 ```
 
+## Migration from 1.0.3
+
+There where 2 updates on apr 28th.
+
+v1.1.0 - until here the package was broken and not installable XD
+v2.0.0 - all custom properties on the object are now hidden. Now you can write tests much easier.
+```javascript
+// jest
+// NOW
+test("some initial state test", () => {
+    expect(ItemIds()).toEqual([]) 
+});
+
+// BEFORE v2.0.0
+test("some initial state test", () => {
+    const state = ItemIds();
+    
+    expect(Array.isArray(state)).toBeTruthy()
+    expect(state.length).toBe(0) 
+});
+```
+
 ## Feedback && Support
 
 If this package is in any way helpful to you, I would love to hear about your use cases. 
