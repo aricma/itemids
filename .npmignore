@@ -1,7 +1,7 @@
 .DS_Store
 .idea
-.github
+.git
 .gitignore
+.github
 coverage
 node_modules
-src
