@@ -9,12 +9,10 @@ describe("ItemIds", () => {
 	
 	test("returns and empty array per default", () => {
 		const itemIds = ItemIds();
-
-		expect(Array.isArray(itemIds)).toBeTruthy();
-		expect(itemIds.length).toBe(0)
+		expect(itemIds).toEqual([]);
 	});
 	
-	test("takes given array and retruns it as an instance of ItemIds", () => {
+	test("takes given array and returns it as an instance of ItemIds", () => {
 		const array = [1,2,3];
 		const itemIds = ItemIds(array);
 		
