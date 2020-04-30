@@ -32,6 +32,8 @@ export function set(action = []) {
     let values = action;
     if (isFunction) values = action(this);
 
+    values = staticMethods.unify(values);
+
     this.splice(0);
     values.forEach(itemId => this.push(itemId));
 
@@ -54,7 +56,10 @@ export function add(value = []) {
     let values = value;
     if (isItemId) values = [value];
 
-    values.forEach(itemId => this.push(itemId));
+    values.forEach(itemId => {
+        const isNotInBoundArray = !this.includes(itemId);
+        if (isNotInBoundArray) this.push(itemId)
+    });
 
     return this
 }
@@ -125,6 +130,8 @@ export function toggleAll(values = []) {
     const isItemIdList = staticMethods.isItemIdList(values);
     const gotNeitherItemIdNorItemIdList = !isItemId && !isItemIdList;
     if (gotNeitherItemIdNorItemIdList) throw Error(ERRORS.methods.toggleAll.gotNoItemIdList);
+
+    values = staticMethods.unify(values);
 
     const givenAndBoundArrayHaveNotTheSameLength = this.length !== values.length;
     const notAllGivenIdsAreInBoundArray = !values.reduce((hasIds, id) => hasIds && this.includes(id), true);

@@ -51,6 +51,15 @@ describe("Methods", () => {
             expect(reducer).toBeCalledWith(array)
         });
 
+        test("does not set duplicate values", () => {
+            const array = [1,2,3];
+
+            const boundSet = set.bind(array);
+
+            boundSet([1,1,2,3,3]);
+            expect(array).toEqual([1,2,3]);
+        });
+
     });
 
     describe("add", () => {
@@ -81,6 +90,14 @@ describe("Methods", () => {
 
             const boundAdd = add.bind(array);
             expect(boundAdd([4,5,6])).toEqual([1,2,3,4,5,6])
+        });
+
+        test("is adding no duplicate values", () => {
+            const array = [1,2,3];
+
+            const boundAdd = add.bind(array);
+            const result = boundAdd([2,3,4]);
+            expect(result).toEqual([1,2,3,4])
         });
 
     });
@@ -193,6 +210,13 @@ describe("Methods", () => {
             const boundToggleAll = toggleAll.bind(array);
             expect(boundToggleAll([1,2,3])).toEqual([])
         });
+
+        test("is not setting duplicate ids", () => {
+            const array = [1,2,3];
+
+            const boundToggleAll = toggleAll.bind(array);
+            expect(boundToggleAll([1,1,2,2,3,3])).toEqual([])
+        })
 
     });
 
