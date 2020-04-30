@@ -126,10 +126,8 @@ export function toggleAll(values = []) {
     const isNotBoundToAnArray = !Array.isArray(this);
     if (isNotBoundToAnArray) throw Error(ERRORS.methods.toggleAll.isNotBoundToAnArray);
 
-    const isItemId = staticMethods.isItemId(values);
-    const isItemIdList = staticMethods.isItemIdList(values);
-    const gotNeitherItemIdNorItemIdList = !isItemId && !isItemIdList;
-    if (gotNeitherItemIdNorItemIdList) throw Error(ERRORS.methods.toggleAll.gotNoItemIdList);
+    const gotNoItemIdList = !staticMethods.isItemIdList(values);
+    if (gotNoItemIdList) throw Error(ERRORS.methods.toggleAll.gotNoItemIdList);
 
     values = staticMethods.unify(values);
 
