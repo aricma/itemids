@@ -22,7 +22,9 @@ import * as ERRORS from './errors';
 export function ItemIds(ids = []) {
 	const givenWasNoArray = !Array.isArray(ids);
 	if (givenWasNoArray) throw ERRORS.ItemIds.givenWasNoArray;
-	
+
+	ids = staticMethods.unify(ids);
+
 	return Object.assign(
 		ids,
 		// properties

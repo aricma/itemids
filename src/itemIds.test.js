@@ -26,6 +26,13 @@ describe("ItemIds", () => {
 		expect(() => ItemIds({})).toThrow();
 	});
 
+	test("does not allow duplicates", () => {
+		const array = [1,2,2,3];
+		const itemIds = ItemIds(array);
+
+		expect(itemIds).toEqual([1,2,3]);
+	});
+
 	describe("identity", () => {
 
 		test("has the name prop with the value: \"ItemIds\"", () => {
