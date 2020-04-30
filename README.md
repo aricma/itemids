@@ -10,11 +10,13 @@ with the same kind of state. I extracted the shared logic and put it in a object
 
 ## Usage
 
-with npm:
-```npm install @aricma/itemids```
+```bash
+# with npm
+npm install @aricma/itemids
 
-with yarn:
-```yarn add @aricma/itemids```
+# with yarn
+yarn add @aricma/itemids
+```
 
 
 ItemIds can be use anywhere where their is selection:
@@ -30,7 +32,7 @@ ItemIds can be use anywhere where their is selection:
 
 
 example for react state:
-```Js
+```javascript
 function Gallery({ images }) {
     // STATE HANDLER HOOK
     const { selection, toggle } = useGalleryState();
@@ -168,13 +170,10 @@ ItemIds() // []
 .isEqualTo([1,2,3,4]) // false
 ```
 
-## Migration from 1.0.3
+## Changelog
 
-*There where 2 updates on apr 28th.*
-
-- v1.1.0: until here the package was broken and not installable XD
+- v2.1.0: ItemIds does no longer allow duplicate values
 - v2.0.0: all custom properties on the object are now hidden. Now you can write tests much easier.
-
 ```javascript
 // jest
 // NOW
@@ -187,9 +186,10 @@ test("some initial state test", () => {
     const state = ItemIds();
     
     expect(Array.isArray(state)).toBeTruthy()
-    expect(state.length).toBe(0) 
+    expect(state.length).toBe(0)
 });
 ```
+- v1.1.0: until here the package was broken and not installable XD
 
 ## Feedback && Support
 
