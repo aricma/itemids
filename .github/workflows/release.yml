@@ -3,12 +3,8 @@ name: release
 on:
     push:
         branches:
-            - master
-              tags: [ 'v*' ]
-    pull_request:
-        branches:
-            - master
-              tags: [ 'v*' ]
+            master:
+                tags: [ 'v*' ]
       
 jobs:
     release:
