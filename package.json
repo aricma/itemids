@@ -27,6 +27,7 @@
     "url": "https://github.com/aricma/itemids/issues"
   },
   "homepage": "https://github.com/aricma/itemids.git#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "license": "MIT",
   "keywords": [
     "react",
