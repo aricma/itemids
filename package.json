@@ -18,10 +18,7 @@
     "babel-jest": "^25.4.0",
     "jest": "^25.4.0"
   },
-  "author": {
-    "name": "Adrian Mindak",
-    "url": "aricma.com"
-  },
+  "author": "Adrian Mindak (aricma.com)",
   "repository": {
     "type": "git",
     "url": "https://github.com/aricma/itemids.git"
@@ -29,6 +26,7 @@
   "bugs": {
     "url": "https://github.com/aricma/itemids/issues"
   },
+  "homepage": "https://github.com/aricma/itemids.git#readme",
   "license": "MIT",
   "keywords": [
     "react",
