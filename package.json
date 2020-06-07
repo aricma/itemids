@@ -8,7 +8,8 @@
     "build": "npx babel src --out-dir build",
     "test": "jest src --watch",
     "coverage": "jest src --collect-coverage",
-    "ci-test": "jest src --ci"
+    "ci-test": "jest src --ci",
+    "ci-integration-test": "jest integrationTest --ci"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
