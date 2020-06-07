@@ -1,6 +1,7 @@
 # ItemIds (*object*)
 
 ![tests](https://github.com/aricma/itemids/workflows/tests/badge.svg)
+![integration_tests](https://github.com/aricma/itemids/workflows/integration_tests/badge.svg)
 [![codecov](https://codecov.io/gh/aricma/itemids/branch/master/graph/badge.svg)](https://codecov.io/gh/aricma/itemids)
 
 *Be faster in creating and updating react state, with ItemIds.*
@@ -33,6 +34,8 @@ ItemIds can be use anywhere where their is selection:
 
 example for react state:
 ```javascript
+// example for usage with react state
+
 function Gallery({ images }) {
     // STATE HANDLER HOOK
     const { selection, toggle } = useGalleryState();
@@ -41,7 +44,7 @@ function Gallery({ images }) {
         <div>
             {
                 images.map(({ id, name, src }) => {
-                    const isSelected = selection.has(id)
+                    const isSelected = ItemIds(selection).has(id) // bool
                     return (
                         <Image
                             key={index}
@@ -59,21 +62,22 @@ function Gallery({ images }) {
 
 function useGalleryState() {
     // STATE
-    const [selection, setSelection] = useState(ItemIds()); // [] -> [1,2,3] the ids of the images
+    const [selection, setSelection] = useState([]);
     
     // ACTIONS
     function toggle(id) {
         return function() {
-            setSelection(prevSelection => prevSelection.toggle(id))
+            setSelection(prevSelection => [ ...ItemIds(prevSelection).toggle(id) ]) // [ ...1,2,3 ]
         }
     }
     
     return { selection, toggle }
 }
-```
 
-example for react effects:
-```Js
+```
+```javascript
+// example for usage with react effects
+
 function useGalleryState(initialSelection) {
     // STATE
     const [selection, setSelection] = useState(ItemIds(initialSelection));
@@ -90,6 +94,27 @@ function useGalleryState(initialSelection) {
     
     return { selection, toggle }
 }
+
+```
+
+```javascript
+// usage with immer
+
+function withImmer(state, action) {
+    return produce((draft, action) => {
+        if (action.type === "RUN"){
+            // you have to destructure since immer will not allow custom objects
+            // https://immerjs.github.io/immer/docs/complex-objects
+            draft["items"] = [ ...ItemIds(original(draft.items)).add(3) ] 
+        }
+    })(state, action)
+}
+
+const state = { items: [1,2] };
+const action = { type: "RUN" };
+
+withImmer(state, action)  // { items: [1,2,3] }
+
 ```
 
 
@@ -168,26 +193,6 @@ ItemIds() // []
 // is very helpful in useEffects when updating the state based on changes from the outside
 .isEqualTo([1,2,3]) // true
 .isEqualTo([1,2,3,4]) // false
-
-```
-
-```javascript
-// usage with immer
-
-function withImmer(state, action) {
-    return produce((draft, action) => {
-        if (action.type === "RUN"){
-            // you have to destructure since immer will not allow custom objects
-            // https://immerjs.github.io/immer/docs/complex-objects
-            draft["items"] = [ ...ItemIds(original(draft.items)).add(3) ] 
-        }
-    })(state, action)
-}
-
-const state = { items: [1,2] };
-const action = { type: "RUN" };
-
-withImmer(state, action)  // { items: [1,2,3] }
 
 ```
 
