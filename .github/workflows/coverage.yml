@@ -10,15 +10,15 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js 12.x
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 12.x
-            - run: npm ci
+            -   uses: actions/checkout@v2
+            -   name: Use Node.js 12.x
+                uses: actions/setup-node@v1
+                with:
+                    node-version: 12.x
+            -   run: npm ci
             
-            - name: Run the jest coverage report
-            - run: npm run coverage
+            -   name: Run the jest coverage report
+                    run: npm run coverage
             
-            - name: Upload the report to codecov
-              uses: codecov/codecov-action@v1.0.6
+            -   name: Upload the report to codecov
+                uses: codecov/codecov-action@v1.0.6
