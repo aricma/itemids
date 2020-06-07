@@ -15,6 +15,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "babel-jest": "^25.4.0",
+    "immer": "^6.0.9",
     "jest": "^25.4.0"
   },
   "author": "Adrian Mindak (aricma.com)",
@@ -26,7 +27,9 @@
     "url": "https://github.com/aricma/itemids/issues"
   },
   "homepage": "https://github.com/aricma/itemids.git#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "license": "MIT",
   "keywords": [
     "react",
