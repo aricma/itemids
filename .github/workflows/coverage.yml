@@ -1,4 +1,4 @@
-name: codecov
+name: coverage
 
 on:
     push:
@@ -16,6 +16,9 @@ jobs:
               with:
                   node-version: 12.x
             - run: npm ci
+            
+            - name: Run the jest coverage report
             - run: npm run coverage
-            - name: Codecov
+            
+            - name: Upload the report to codecov
               uses: codecov/codecov-action@v1.0.6
