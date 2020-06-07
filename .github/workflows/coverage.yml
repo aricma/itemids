@@ -18,7 +18,7 @@ jobs:
             -   run: npm ci
             
             -   name: Run the jest coverage report
-                    run: npm run coverage
+                run: npm run coverage
             
             -   name: Upload the report to codecov
                 uses: codecov/codecov-action@v1.0.6
