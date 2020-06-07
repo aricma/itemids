@@ -168,6 +168,27 @@ ItemIds() // []
 // is very helpful in useEffects when updating the state based on changes from the outside
 .isEqualTo([1,2,3]) // true
 .isEqualTo([1,2,3,4]) // false
+
+```
+
+```javascript
+// usage with immer
+
+function withImmer(state, action) {
+    return produce((draft, action) => {
+        if (action.type === "RUN"){
+            // you have to destructure since immer will not allow custom objects
+            // https://immerjs.github.io/immer/docs/complex-objects
+            draft["items"] = [ ...ItemIds(original(draft.items)).add(3) ] 
+        }
+    })(state, action)
+}
+
+const state = { items: [1,2] };
+const action = { type: "RUN" };
+
+withImmer(state, action)  // { items: [1,2,3] }
+
 ```
 
 ## Feedback && Support
