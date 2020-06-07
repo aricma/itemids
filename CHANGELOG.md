@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.1] - 2020-06-07
+### Added
+- integration test with '[immer](https://www.npmjs.com/package/immer)'
+- integration tests work flow
+
 ## [2.1.0] - 2020-04-30
 ### Changed
 - ItemIds does no longer allow duplicate values.
@@ -46,6 +51,7 @@ test("some initial state test", () => {
 
 
 [Unreleased]: https://github.com/aricma/itemids/issues
+[2.1.1]: https://github.com/aricma/itemids/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/aricma/itemids/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/aricma/itemids/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/aricma/itemids/compare/v1.0.3...v1.1.0
