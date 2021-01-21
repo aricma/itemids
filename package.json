@@ -16,7 +16,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "babel-jest": "^25.4.0",
-    "immer": "^6.0.9",
+    "immer": "^8.0.1",
     "jest": "^25.4.0"
   },
   "author": "Adrian Mindak (aricma.com)",
